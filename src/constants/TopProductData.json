@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Nioxin Thickening Gel",
+    "image": "../Products/product1.svg",
+    "price": 600,
+    "type": "Pricerunner",
+    "percent": 10,
+    "cvrPercent": 49
+  },
+  {
+    "id": 2,
+    "name": "Prada Paradoxe Eau De",
+    "image": "../Products/product2.svg",
+    "price": 400,
+    "type": "Lyco",
+    "percent": 5,
+    "cvrPercent": 35
+  },
+  {
+    "id": 3,
+    "name": "DeoDoc Violet Cotton",
+    "image": "../Products/product3.svg",
+    "price": 500,
+    "type": "Pricerunner",
+    "percent": 5,
+    "cvrPercent": 41
+  },
+  {
+    "id": 4,
+    "name": "ghd Curve Soft Curl",
+    "image": "../Products/product3.svg",
+    "price": 259,
+    "type": "Lyco",
+    "percent": 20,
+    "cvrPercent": 33
+  }
+]
