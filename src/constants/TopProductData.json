@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Nioxin Thickening Gel",
+    "name": "Nioxin Thickening Gel 140ml",
     "image": "../Products/product1.svg",
     "price": 600,
     "type": "Pricerunner",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "name": "Prada Paradoxe Eau De",
+    "name": "Paradoxe Eau De Parfum 50 ml",
     "image": "../Products/product2.svg",
     "price": 400,
     "type": "Lyco",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "name": "DeoDoc Violet Cotton",
+    "name": "DeoDoc Violet Cotton Intimtvål 100 ml",
     "image": "../Products/product3.svg",
     "price": 500,
     "type": "Pricerunner",
@@ -28,11 +28,156 @@
   },
   {
     "id": 4,
-    "name": "ghd Curve Soft Curl",
+    "name": "Ghd Curve Soft Curl Tong",
     "image": "../Products/product3.svg",
     "price": 259,
     "type": "Lyco",
     "percent": 20,
     "cvrPercent": 33
+  },
+  {
+    "id": 5,
+    "name": "Nioxin Thickening Gel 140ml",
+    "image": "../Products/product1.svg",
+    "price": 600,
+    "type": "Pricerunner",
+    "percent": 10,
+    "cvrPercent": 49
+  },
+  {
+    "id": 6,
+    "name": "Paradoxe Eau De Parfum 50 ml",
+    "image": "../Products/product2.svg",
+    "price": 400,
+    "type": "Lyco",
+    "percent": 5,
+    "cvrPercent": 35
+  },
+  {
+    "id": 7,
+    "name": "DeoDoc Violet Cotton Intimtvål 100 ml",
+    "image": "../Products/product3.svg",
+    "price": 500,
+    "type": "Pricerunner",
+    "percent": 5,
+    "cvrPercent": 41
+  },
+  {
+    "id": 8,
+    "name": "Ghd Curve Soft Curl Tong",
+    "image": "../Products/product3.svg",
+    "price": 259,
+    "type": "Lyco",
+    "percent": 20,
+    "cvrPercent": 33
+  },
+  {
+    "id": 9,
+    "name": "Nioxin Thickening Gel 140ml",
+    "image": "../Products/product1.svg",
+    "price": 600,
+    "type": "Pricerunner",
+    "percent": 10,
+    "cvrPercent": 49
+  },
+  {
+    "id": 10,
+    "name": "Paradoxe Eau De Parfum 50 ml",
+    "image": "../Products/product2.svg",
+    "price": 400,
+    "type": "Lyco",
+    "percent": 5,
+    "cvrPercent": 35
+  },
+  {
+    "id": 11,
+    "name": "DeoDoc Violet Cotton Intimtvål 100 ml",
+    "image": "../Products/product3.svg",
+    "price": 500,
+    "type": "Pricerunner",
+    "percent": 5,
+    "cvrPercent": 41
+  },
+  {
+    "id": 12,
+    "name": "Ghd Curve Soft Curl Tong",
+    "image": "../Products/product3.svg",
+    "price": 259,
+    "type": "Lyco",
+    "percent": 20,
+    "cvrPercent": 33
+  },
+
+  {
+    "id": 13,
+    "name": "Paradoxe Eau De Parfum 50 ml",
+    "image": "../Products/product2.svg",
+    "price": 400,
+    "type": "Lyco",
+    "percent": 5,
+    "cvrPercent": 35
+  },
+  {
+    "id": 14,
+    "name": "DeoDoc Violet Cotton Intimtvål 100 ml",
+    "image": "../Products/product3.svg",
+    "price": 500,
+    "type": "Pricerunner",
+    "percent": 5,
+    "cvrPercent": 41
+  },
+  {
+    "id": 15,
+    "name": "Ghd Curve Soft Curl Tong",
+    "image": "../Products/product3.svg",
+    "price": 259,
+    "type": "Lyco",
+    "percent": 20,
+    "cvrPercent": 33
+  },
+  {
+    "id": 16,
+    "name": "Paradoxe Eau De Parfum 50 ml",
+    "image": "../Products/product2.svg",
+    "price": 400,
+    "type": "Lyco",
+    "percent": 5,
+    "cvrPercent": 35
+  },
+  {
+    "id": 17,
+    "name": "DeoDoc Violet Cotton Intimtvål 100 ml",
+    "image": "../Products/product3.svg",
+    "price": 500,
+    "type": "Pricerunner",
+    "percent": 5,
+    "cvrPercent": 41
+  },
+  {
+    "id": 18,
+    "name": "Ghd Curve Soft Curl Tong",
+    "image": "../Products/product3.svg",
+    "price": 259,
+    "type": "Lyco",
+    "percent": 20,
+    "cvrPercent": 33
+  },
+  {
+    "id": 19,
+    "name": "Paradoxe Eau De Parfum 50 ml",
+    "image": "../Products/product2.svg",
+    "price": 400,
+    "type": "Lyco",
+    "percent": 5,
+    "cvrPercent": 35
+  },
+  {
+    "id": 20,
+    "name": "DeoDoc Violet Cotton Intimtvål 100 ml",
+    "image": "../Products/product3.svg",
+    "price": 500,
+    "type": "Pricerunner",
+    "percent": 5,
+    "cvrPercent": 41
   }
 ]

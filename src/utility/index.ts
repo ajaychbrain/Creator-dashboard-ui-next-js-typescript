@@ -7,6 +7,16 @@ export function getMonthName(monthNumber: number) {
   });
 }
 
+export function characterStringCheck(val: string) {
+  if (val && val.length > 30) {
+    const newStr = val.substring(0, 27) + "...";
+    return newStr;
+  } else {
+  }
+
+  return val;
+}
+
 // export function calculateStartandEndDate(startDate: any, endDate: any) {
 //   let startDateString = startDate.toLocaleDateString();
 //   let endDateString = endDate?.toLocaleDateString();

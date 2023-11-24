@@ -86,13 +86,23 @@ const DatePickerComponent = ({ selectValueFromtoTo }: Props) => {
       selectsRange={true}
       startDate={startDate}
       endDate={endDate}
+      value={calculatedDate}
       onChange={(update: any) => {
         const d = new Date(update);
         console.log(update, "update");
+        setStartDate(update[0]);
+        setEndDate(update[1]);
 
+        setCalculatedDate(() => {
+          const startDate = new Date(update[0]);
+          const endDate = new Date(update[1]);
+          let returnDate =
+            format(startDate, "do LLL") + " - " + format(endDate, "do LLL");
+          return returnDate;
+        });
         // setDateRange(update);
       }}
-      value={calculatedDate}
+      // value={calculatedDate}
     />
   );
 };

@@ -1,36 +1,27 @@
 [
-    {
-      "id": 1,
-      "name": "Nioxin Thickening",
-      "price": 600
-      
-    },
-    {
-      "id": 2,
-      "name": "Prada Paradoxe Eau",
-      "price": 400
-      
-    },
-    {
-      "id": 3,
-      "name": "DeoDoc Violet Cotton",
-      "price": 400
-      
-    },
-    {
-      "id": 4,
-      "name": "ghd Curve Soft",
-      "price": 400
-    
-    }
-    ,
-    {
-        "id": 5,
-        "name": "ghd Curve Soft",
-        "price": 400
-      
-      }
-      
-     
-  ]
-  
+  {
+    "id": 1,
+    "name": "Bangerhead",
+    "price": 600
+  },
+  {
+    "id": 2,
+    "name": "Lyko",
+    "price": 400
+  },
+  {
+    "id": 3,
+    "name": "Åhléns",
+    "price": 400
+  },
+  {
+    "id": 4,
+    "name": "Meds",
+    "price": 400
+  },
+  {
+    "id": 5,
+    "name": "Kicks",
+    "price": 400
+  }
+]
