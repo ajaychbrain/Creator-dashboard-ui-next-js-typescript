@@ -1,4 +1,5 @@
 import {
+  HeadLinkContainer,
   OneCardComponent,
   ProductColumnContainer,
   ProductContainer,
@@ -13,68 +14,57 @@ import arrowSvg from "../../public/arrow.svg";
 import productsvg from "../../public/product1.svg";
 import Image from "next/image";
 import { characterStringCheck } from "@/utility";
+import { Data } from "@/types";
 
-interface data {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  type: string;
-  percent: number;
-  cvrPercent: number;
-}
-interface Postdata {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-}
-
-interface Storesdata {
-  id: number;
-  name: string;
-  price: number;
-}
-
-interface ProductProps {
-  data: data[];
+interface PostDataProps {
+  data: Data[];
   title: string;
 }
 
-interface StoresProps {
-  data: Storesdata[];
+interface StoresDataProps {
+  data: Data[];
   title: string;
 }
 
-type Props = ProductProps | PostProps | StoresProps;
-
-interface PostProps {
-  data: Postdata[];
+interface ProductDataProps {
+  data: Data[];
   title: string;
 }
 
-const CardComponent = (props: Props) => {
+type PropsData = StoresDataProps | PostDataProps | ProductDataProps;
+
+////////////TYPE GUARD/////////////////
+const isString = (value: any): value is string =>
+  typeof value === "string" || value === undefined;
+
+const isPostData = (data: any): data is PostDataProps => {
+  return isString(data.data.length > 0 ? data.data[0]?.image : null);
+};
+
+const isStoresData = (data: any): data is StoresDataProps => {
+  // console.log(data);
+  return isString(data.data.length > 0 ? data.data[0]?.image : null);
+};
+
+const isProductData = (data: any): data is ProductDataProps => {
+  return isString(data.data.length > 0 ? data.data[0]?.image : null);
+};
+
+const CardComponent = (props: PropsData) => {
   console.log(props, "Hello Data");
 
-  if (props.title === "Top products") {
+  if (props.title === "Top products" && isProductData(props)) {
     return (
       <BoxShadowContainer>
-        <OneCardComponent>
-          <TopContainer>
-            <span
-              style={{
-                color: "#3A3A3A",
-                fontFamily: "Strawford",
-                fontSize: "22px",
-                fontStyle: "normal",
-                fontWeight: "1000",
-                lineHeight: "normal",
-              }}
-            >
-              {props.title}
-            </span>
+        <OneCardComponent
+          $height="440px"
+          $overflowY={true}
+          $isheightChange={true}
+        >
+          <HeadLinkContainer href={"/topproducts"}>
+            <TopContainer $bold={true}>{props.title}</TopContainer>
             <Image src={arrowSvg} alt="icons" />
-          </TopContainer>
+          </HeadLinkContainer>
           {props.data.map((item: any) => {
             const checkString = characterStringCheck(item.name);
             return (
@@ -123,25 +113,14 @@ const CardComponent = (props: Props) => {
     );
   }
 
-  if (props.title === "Top posts") {
+  if (props.title === "Top posts" && isPostData(props)) {
     return (
       <BoxShadowContainer>
         <OneCardComponent>
-          <TopContainer>
-            <span
-              style={{
-                color: "#3A3A3A",
-                fontFamily: "Strawford",
-                fontSize: "22px",
-                fontStyle: "normal",
-                fontWeight: "1000",
-                lineHeight: "normal",
-              }}
-            >
-              {props.title}
-            </span>
+          <HeadLinkContainer href={"/topposts"}>
+            <TopContainer $bold={true}>{props.title}</TopContainer>
             <Image src={arrowSvg} alt="icons" />
-          </TopContainer>
+          </HeadLinkContainer>
           {props.data.map((item: any) => {
             const checkString = characterStringCheck(item.name);
             return (
@@ -176,25 +155,15 @@ const CardComponent = (props: Props) => {
     );
   }
 
-  if (props.title === "Top stores") {
+  if (props.title === "Top stores" && isStoresData(props)) {
     return (
       <BoxShadowContainer>
         <OneCardComponent>
-          <TopContainer>
-            <span
-              style={{
-                color: "#3A3A3A",
-                fontFamily: "Strawford",
-                fontSize: "22px",
-                fontStyle: "normal",
-                fontWeight: "1000",
-                lineHeight: "normal",
-              }}
-            >
-              {props.title}
-            </span>
+          <HeadLinkContainer href={"/topstores"}>
+            <TopContainer $bold={true}>{props.title}</TopContainer>
+
             <Image src={arrowSvg} alt="icons" />
-          </TopContainer>
+          </HeadLinkContainer>
           {props.data.map((item: any) => {
             return (
               <>

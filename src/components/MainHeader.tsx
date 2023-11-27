@@ -3,9 +3,11 @@ import Button from "./Button";
 import { buttons } from "../constants/index";
 import { HeadingContainer } from "@/styles/indexStyle";
 import DatePickerComponent from "./DatePickerComponent";
-type Props = {};
+type Props = {
+  isApplyStyle: boolean;
+};
 
-const OptionsChart = (props: Props) => {
+const MainHeader = (props: Props) => {
   const [selected, setSelected] = useState("");
   const [show, setShow] = useState(false);
 
@@ -15,7 +17,7 @@ const OptionsChart = (props: Props) => {
   };
 
   return (
-    <HeadingContainer>
+    <HeadingContainer $applyStyle={props.isApplyStyle}>
       {buttons.map((buttonDetails: any, index: number) => {
         return (
           <Button
@@ -28,9 +30,8 @@ const OptionsChart = (props: Props) => {
         );
       })}
       <DatePickerComponent selectValueFromtoTo={selected} />
-      
     </HeadingContainer>
   );
 };
 
-export default OptionsChart;
+export default MainHeader;

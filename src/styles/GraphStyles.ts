@@ -6,6 +6,7 @@ export const GraphContainer = styled.div`
   flex-direction: column;
   border-radius: 10px;
   gap: 16px;
+  justify-content: center;
 
   margin-top: 31px;
 `;

@@ -7,4 +7,8 @@ export const Global = createGlobalStyle`
         padding: 0;
         margin: 0;
     }
+
+    @media only screen and (max-width: 920px) {
+    font-size: 14px;
+  }
 `;

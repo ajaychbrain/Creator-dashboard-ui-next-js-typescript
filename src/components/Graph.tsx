@@ -10,7 +10,7 @@ const Graph = (props: Props) => {
   return (
     <BoxShadowContainer>
       <GraphContainer>
-      <Image src={curvedLine}  alt="icons" />
+        <Image src={curvedLine} alt="icons" style={{ width: "100%" }} />
         {/* <ChartComponent /> */}
       </GraphContainer>
     </BoxShadowContainer>
