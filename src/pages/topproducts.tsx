@@ -2,6 +2,7 @@ import SearchContainer from "@/components/SearchContainer";
 import {
   FlexContainerCard,
   OneCardComponent,
+  ProductContainer,
   TopAllTitleContainer,
   TopContainer,
   TopContainerChild,
@@ -22,7 +23,7 @@ const AllTopProducts = (props: Props) => {
   return (
     <>
       <MainContainer>
-        <SearchContainer />
+        <SearchContainer isApplyStyle={false} />
         <BoxShadowContainer>
           <OneCardComponent>
             <>
@@ -40,7 +41,11 @@ const AllTopProducts = (props: Props) => {
                         height={25}
                       />
                       <div>
-                        <TopContainer>{item.name}</TopContainer>
+                        <ProductContainer
+                          style={{ fontWeight: "600", fontSize: "0.875rem" }}
+                        >
+                          {item.name}
+                        </ProductContainer>
                         <div>
                           <TopContainer
                             $background="#f4f0ec"

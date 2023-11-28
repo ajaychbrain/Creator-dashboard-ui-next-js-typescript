@@ -34,7 +34,11 @@ const AllTopPosts = (props: Props) => {
                   <TopMainContainer key={item.id}>
                     <TopContainerChild>
                       <div>
-                        <TopContainer>{item.name}</TopContainer>
+                        <TopContainer
+                          style={{ fontWeight: "600", fontSize: "0.875rem" }}
+                        >
+                          {item.name}
+                        </TopContainer>
                         <div>
                           <TopContainer></TopContainer>
                         </div>

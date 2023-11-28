@@ -32,6 +32,7 @@ export const ButtonStyled = styled.button<{
 `;
 export const HeadingContainerMain = styled.div<{
   $applyStyle?: boolean;
+  $applyPadding?: boolean;
 }>`
   display: flex;
   flex-direction: row;
@@ -55,6 +56,12 @@ export const HeadingContainerMain = styled.div<{
       display: none;
     }
       `}
+  }
+  @media only screen and (max-width: 1024px) {
+    margin-top: 2.3rem;
+  }
+  @media only screen and (max-width: 920px) {
+    margin-top: ${(props) => (props.$applyPadding ? "2.5rem" : "1.5rem")};
   }
 `;
 
@@ -82,7 +89,7 @@ export const DatePickerContainer = styled(DatePicker)`
   }
 `;
 
-export const BoxShadowContainer = styled.div`
+export const BoxShadowContainer = styled.div<{ $applyHeight?: string }>`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 

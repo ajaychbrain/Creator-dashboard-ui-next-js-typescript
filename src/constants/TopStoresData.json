@@ -23,5 +23,20 @@
     "id": 5,
     "name": "Kicks",
     "price": 400
+  },
+  {
+    "id": 6,
+    "name": "Kicks",
+    "price": 400
+  },
+  {
+    "id": 7,
+    "name": "Kicks",
+    "price": 400
+  },
+  {
+    "id": 8,
+    "name": "Kicks",
+    "price": 400
   }
 ]

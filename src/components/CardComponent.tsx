@@ -57,57 +57,58 @@ const CardComponent = (props: PropsData) => {
     return (
       <BoxShadowContainer>
         <OneCardComponent
-          $height="440px"
+          $height="430px"
           $overflowY={true}
           $isheightChange={true}
         >
-          <HeadLinkContainer href={"/topproducts"}>
-            <TopContainer $bold={true}>{props.title}</TopContainer>
-            <Image src={arrowSvg} alt="icons" />
-          </HeadLinkContainer>
-          {props.data.map((item: any) => {
-            const checkString = characterStringCheck(item.name);
-            return (
-              <>
-                <TopMainContainer>
-                  <TopContainerChild>
-                    <Image
-                      src={item.image}
-                      alt="product"
-                      width={50}
-                      height={50}
-                    />
+          <>
+            <HeadLinkContainer href={"/topproducts"}>
+              <TopContainer style={{ fontWeight: "600" }}>
+                {props.title}
+              </TopContainer>
+              <Image src={arrowSvg} alt="icons" />
+            </HeadLinkContainer>
 
-                    <div>
-                      <ProductContainer>
-                        <span className="product-text">{checkString}</span>
-                      </ProductContainer>
+            {props.data.map((item: any) => {
+              const checkString = characterStringCheck(item.name);
+              return (
+                <>
+                  <TopMainContainer>
+                    <TopContainerChild>
+                      <Image
+                        src={item.image}
+                        alt="product"
+                        width={40}
+                        height={40}
+                      />
+
                       <div>
-                        <ProductContainer>
-                          <span className="product-precent">
+                        <ProductContainer $bold={true}>
+                          {checkString}
+                        </ProductContainer>
+                        <div>
+                          <ProductContainer
+                            $background="#f4f0ec"
+                            $bold={true}
+                            $padding={true}
+                          >
                             {item.percent}%
-                          </span>
-                        </ProductContainer>
-                        <ProductContainer>
-                          <span className="product-type">{item.type}</span>
-                        </ProductContainer>
+                          </ProductContainer>
+                          <ProductContainer>{" " + item.type}</ProductContainer>
+                        </div>
                       </div>
-                    </div>
-                  </TopContainerChild>
-                  <ProductColumnContainer>
-                    <ProductContainer>
-                      <span className="product-price">SEK {item.price}</span>
-                    </ProductContainer>
-                    <ProductContainer>
-                      <span className="product-cv">
-                        {item.cvrPercent} Clicks
-                      </span>
-                    </ProductContainer>
-                  </ProductColumnContainer>
-                </TopMainContainer>
-              </>
-            );
-          })}
+                    </TopContainerChild>
+                    <ProductColumnContainer>
+                      <ProductContainer $bold={true}>
+                        SEK {item.price}
+                      </ProductContainer>
+                      <ProductContainer>CSV{item.cvrPercent}</ProductContainer>
+                    </ProductColumnContainer>
+                  </TopMainContainer>
+                </>
+              );
+            })}
+          </>
         </OneCardComponent>
       </BoxShadowContainer>
     );
@@ -116,40 +117,44 @@ const CardComponent = (props: PropsData) => {
   if (props.title === "Top posts" && isPostData(props)) {
     return (
       <BoxShadowContainer>
-        <OneCardComponent>
-          <HeadLinkContainer href={"/topposts"}>
-            <TopContainer $bold={true}>{props.title}</TopContainer>
-            <Image src={arrowSvg} alt="icons" />
-          </HeadLinkContainer>
-          {props.data.map((item: any) => {
-            const checkString = characterStringCheck(item.name);
-            return (
-              <>
-                <TopMainContainer>
-                  <TopContainerChild>
-                    <Image
-                      src={item.image}
-                      alt="product"
-                      width={50}
-                      height={50}
-                    />
+        <OneCardComponent
+          $height="430px"
+          $overflowY={true}
+          $isheightChange={true}
+        >
+          <>
+            <HeadLinkContainer href={"/topposts"}>
+              <TopContainer style={{ fontWeight: "600" }}>
+                {props.title}
+              </TopContainer>
+              <Image src={arrowSvg} alt="icons" />
+            </HeadLinkContainer>
 
-                    <div>
-                      <ProductContainer>
-                        <span className="product-text">{checkString}</span>
+            {props.data.map((item: any) => {
+              const checkString = characterStringCheck(item.name);
+              return (
+                <>
+                  <TopMainContainer $padding="0.92rem 2rem">
+                    <TopContainerChild>
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        width={40}
+                        height={40}
+                      />
+
+                      <ProductContainer $bold={true}>
+                        {checkString}
                       </ProductContainer>
-                      <div></div>
-                    </div>
-                  </TopContainerChild>
-                  <ProductColumnContainer>
-                    <ProductContainer>
-                      <span className="product-price">SEK {item.price}</span>
-                    </ProductContainer>
-                  </ProductColumnContainer>
-                </TopMainContainer>
-              </>
-            );
-          })}
+                    </TopContainerChild>
+                    <ProductColumnContainer>
+                      <ProductContainer>SEK{item.price}</ProductContainer>
+                    </ProductColumnContainer>
+                  </TopMainContainer>
+                </>
+              );
+            })}
+          </>
         </OneCardComponent>
       </BoxShadowContainer>
     );
@@ -158,43 +163,37 @@ const CardComponent = (props: PropsData) => {
   if (props.title === "Top stores" && isStoresData(props)) {
     return (
       <BoxShadowContainer>
-        <OneCardComponent>
-          <HeadLinkContainer href={"/topstores"}>
-            <TopContainer $bold={true}>{props.title}</TopContainer>
+        <OneCardComponent
+          $height="430px"
+          $overflowY={true}
+          $isheightChange={true}
+        >
+          <>
+            <HeadLinkContainer href={"/topstores"}>
+              <TopContainer style={{ fontWeight: "600" }}>
+                {props.title}
+              </TopContainer>
 
-            <Image src={arrowSvg} alt="icons" />
-          </HeadLinkContainer>
-          {props.data.map((item: any) => {
-            return (
-              <>
-                <TopMainContainer>
-                  <TopContainerChild>
-                    <div>
-                      <ProductContainer>
-                        <span className="product-text">{item.name}</span>
+              <Image src={arrowSvg} alt="icons" />
+            </HeadLinkContainer>
+
+            {props.data.map((item: any) => {
+              return (
+                <>
+                  <TopMainContainer key={item.id} $padding="1.35rem 2rem">
+                    <TopContainerChild>
+                      <ProductContainer $bold={true}>
+                        {item.name}
                       </ProductContainer>
-                      <div>
-                        <ProductContainer>
-                          <span className="product-precent"> </span>
-                        </ProductContainer>
-                        <ProductContainer>
-                          <span className="product-type"></span>
-                        </ProductContainer>
-                      </div>
-                    </div>
-                  </TopContainerChild>
-                  <ProductColumnContainer>
-                    <ProductContainer>
-                      <span className="product-price">SEK {item.price}</span>
-                    </ProductContainer>
-                    <ProductContainer>
-                      <span className="product-cv"></span>
-                    </ProductContainer>
-                  </ProductColumnContainer>
-                </TopMainContainer>
-              </>
-            );
-          })}
+                    </TopContainerChild>
+                    <ProductColumnContainer>
+                      <ProductContainer>SEK {item.price}</ProductContainer>
+                    </ProductColumnContainer>
+                  </TopMainContainer>
+                </>
+              );
+            })}
+          </>
         </OneCardComponent>
       </BoxShadowContainer>
     );

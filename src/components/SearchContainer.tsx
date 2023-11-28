@@ -13,7 +13,9 @@ import { useRouter } from "next/router";
 import React from "react";
 import MainHeader from "./MainHeader";
 
-type Props = {};
+type Props = {
+  isApplyStyle: boolean;
+};
 
 const SearchContainer = (props: Props) => {
   const router = useRouter();
@@ -21,7 +23,7 @@ const SearchContainer = (props: Props) => {
   return (
     <>
       <SearchMainContainer>
-        <HeadingContainerMain>
+        <HeadingContainerMain $applyStyle={false} $applyPadding={false}>
           <ScrollContainer>
             <CaretLeftandLinkContainer>
               <LinkStyle href="/dashboard">
@@ -35,19 +37,19 @@ const SearchContainer = (props: Props) => {
               <SearchLinkContainer>
                 <ButtonStyled
                   $padding={true}
-                  $isSelected={"topproducts" === router.query.category}
+                  $isSelected={"/topproducts" === router.pathname}
                 >
                   <LinkStyle href="/topproducts">Top products</LinkStyle>
                 </ButtonStyled>
                 <ButtonStyled
                   $padding={true}
-                  $isSelected={"topposts" === router.query.category}
+                  $isSelected={"/topposts" === router.pathname}
                 >
                   <LinkStyle href="/topposts">Top posts</LinkStyle>
                 </ButtonStyled>
                 <ButtonStyled
                   $padding={true}
-                  $isSelected={"topstores" === router.query.category}
+                  $isSelected={"/topstores" === router.pathname}
                 >
                   <LinkStyle href="/topstores">Top stores</LinkStyle>
                 </ButtonStyled>

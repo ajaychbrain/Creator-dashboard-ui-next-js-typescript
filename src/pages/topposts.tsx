@@ -40,7 +40,11 @@ const AllTopPosts = (props: Props) => {
                         height={25}
                       />
                       <div>
-                        <TopContainer>{item.name}</TopContainer>
+                        <TopContainer
+                          style={{ fontWeight: "600", fontSize: "0.875rem" }}
+                        >
+                          {item.name}
+                        </TopContainer>
                         <div>
                           <TopContainer></TopContainer>
                         </div>

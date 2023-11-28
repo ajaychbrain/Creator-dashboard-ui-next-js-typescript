@@ -7,11 +7,11 @@ export const OneCardComponent = styled.div<{
   $isheightChange?: boolean;
 }>`
   min-width: 390px;
-  height: ${(props) => (props.$height ? props.$height : "auto")};
+  height: ${(props) => (props.$height ? props.$height : "430px")};
 
   border-radius: 10px;
   gap: 16px;
-  overflow-y: scroll;
+  overflow-y: ${(props) => (props.$height ? "scroll" : "")};
   background-color: rgba(255, 255, 255, 0.4);
 
   &::-webkit-scrollbar {
@@ -19,6 +19,7 @@ export const OneCardComponent = styled.div<{
   }
 
   @media only screen and (max-width: 972px) {
+    min-width: 0;
     margin-bottom: 20px;
   }
 
@@ -46,6 +47,17 @@ export const TopAllTitleContainer = styled.div`
     font-weight: 500;
     line-height: 26px;
     letter-spacing: 0em;
+  }
+  @media only screen and (max-width: 1024px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 12px 15px;
+  }
+  @media only screen and (max-width: 600px) {
+    & > span {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -78,7 +90,7 @@ export const TopContainer = styled.span<{
 
   font-size: ${(props) => (props.$bold ? "0.875rem" : "0.75rem")};
   font-style: normal;
-  font-weight: ${(props) => (props.$bold ? "600" : "400")};
+  font-weight: ${(props) => (props.$bold ? "400" : "600")};
   line-height: normal;
   color: #3a3a3a;
   background-color: ${(props) => (props.$background ? props.$background : "")};
@@ -100,7 +112,7 @@ export const ProductContainer = styled.span<{
 
   font-size: ${(props) => (props.$bold ? "0.875rem" : "0.75rem")};
   font-style: normal;
-  font-weight: ${(props) => (props.$bold ? "600" : "400")};
+  font-weight: ${(props) => (props.$bold ? "600" : "600")};
   line-height: normal;
   color: #3a3a3a;
   background-color: ${(props) => (props.$background ? props.$background : "")};
@@ -120,19 +132,19 @@ export const TopContainerChild = styled.div`
 `;
 
 export const HeadLinkContainer = styled(Link)`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 16px 48px;
-  box-sizing: border-box;
-  border-bottom: 1px solid #dddddd;
-  align-items: center;
-  text-decoration: none;
   position: sticky;
   position: -webkit-sticky;
   background-color: rgba(255, 255, 255, 1);
   top: 0;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 22px 50px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #dddddd;
+  align-items: center;
+  text-decoration: none;
 
   & > span {
     font-size: 22px;
@@ -143,12 +155,6 @@ export const HeadLinkContainer = styled(Link)`
 `;
 
 export const TopMainContainer = styled.div<{ $padding?: string }>`
-  /* display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  padding: 0.625rem 2rem; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,8 +167,18 @@ export const TopMainContainer = styled.div<{ $padding?: string }>`
 export const ProductColumnContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   color: #3a3a3a;
+
+  #percent {
+    background-color: #f4f0ec;
+    color: #3a3a3a;
+
+    font-size: 0.60869rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.02738rem;
+  }
 `;
 export const TopContainertextchild = styled.div`
   border-radius: 2.783px;
