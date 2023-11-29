@@ -2,12 +2,12 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export const OneCardComponent = styled.div<{
-  $height?: string;
+  $height?: boolean;
   $overflowY?: boolean;
   $isheightChange?: boolean;
 }>`
   min-width: 390px;
-  height: ${(props) => (props.$height ? props.$height : "430px")};
+  height: ${(props) => (props.$height ? "430px" : "0px")};
 
   border-radius: 10px;
   gap: 16px;
@@ -53,6 +53,7 @@ export const TopAllTitleContainer = styled.div`
     top: 0;
     left: 0;
     padding: 12px 15px;
+    z-index: 1000;
   }
   @media only screen and (max-width: 600px) {
     & > span {
@@ -120,6 +121,7 @@ export const ProductContainer = styled.span<{
   padding: ${(props) => (props.$padding ? "0.3rem 0.2rem" : "0.3rem 0")};
 
   white-space: ${(props) => (props.$wrap ? "nowrap" : "")};
+  margin-left: 5.06px;
 `;
 
 export const TopContainerChild = styled.div`
@@ -140,7 +142,7 @@ export const HeadLinkContainer = styled(Link)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 22px 50px;
+  padding: 16px 50px;
   box-sizing: border-box;
   border-bottom: 1px solid #dddddd;
   align-items: center;
@@ -196,7 +198,9 @@ export const CardsComponentContainer = styled.div`
   margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
 
   @media only screen and (max-width: 972px) {
     display: block;

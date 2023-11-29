@@ -3,24 +3,33 @@ import React from "react";
 import { BoxShadowContainer } from "@/styles/indexStyle";
 import curvedLine from "../../public/Vector3.svg";
 import Image from "next/image";
+import useWindowSize from "@/ReactHooks/useWindowSize";
+import { Doughnut } from "react-chartjs-2";
 
 type Props = {};
 
 const Graph = (props: Props) => {
+  const { data } = useWindowSize();
+
   return (
     <BoxShadowContainer>
       <GraphContainer>
-        <div
-          style={{
-            color: "#3A3A3A;",
-            padding: "2rem 2rem 1.75rem 2rem",
-            fontSize: "22px",
-            fontWeight: "600",
-            lineHeight: "normal",
-          }}
-        >
-          Earnings
-        </div>
+        {data > 650 ? (
+          <div
+            style={{
+              color: "#3A3A3A;",
+              padding: "2rem 2rem 1.75rem 2rem",
+              fontSize: "22px",
+              fontWeight: "600",
+              lineHeight: "normal",
+            }}
+          >
+            Earnings
+          </div>
+        ) : (
+          ""
+        )}
+
         <Image
           src={curvedLine}
           alt="icons"

@@ -121,14 +121,40 @@ export const SearchMainContainer = styled.div`
 
 export const HeadingContainer = styled.div<{
   $applyStyle?: boolean;
+  $applyPadding?: boolean;
 }>`
   display: flex;
   flex-direction: row;
   justify-content: end;
-  margin-bottom: ${(props) => (props.$applyStyle ? "31px" : "0")};
+  margin-bottom: ${(props) => (props.$applyPadding ? "0" : "0")};
   align-items: center;
   gap: 0.5rem;
   width: 100%;
+  @media only screen and (max-width: 655px) {
+    justify-content: normal;
+    ${(props) =>
+      !props.$applyStyle &&
+      `
+        display: flex;
+    & :nth-child(1) { order: 2; }
+    &  :nth-child(2) { order: 3; }
+    &  :nth-child(3) { order: 4; }
+    & :nth-child(4) { order: 5; }
+    &  :nth-child(5) { order: 1; }
+    justify-content: normal;
+    overflow-x: auto;
+    white-space: nowrap;
+    /////////////HIDE SCROLLBAR/////////////////////////
+    &::-webkit-scrollbar {
+      display: none;
+    }`}
+  }
+  @media only screen and (max-width: 1024px) {
+    margin-top: 2rem;
+  }
+  @media only screen and (max-width: 920px) {
+    margin-top: ${(props) => (props.$applyPadding ? "2rem" : "1.5rem")};
+  }
 `;
 
 export const ScrollContainer = styled.div`

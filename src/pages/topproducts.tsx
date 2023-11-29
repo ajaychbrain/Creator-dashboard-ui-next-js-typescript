@@ -25,49 +25,47 @@ const AllTopProducts = (props: Props) => {
       <MainContainer>
         <SearchContainer isApplyStyle={false} />
         <BoxShadowContainer>
-          <OneCardComponent>
-            <>
-              <TopAllTitleContainer>
-                <TopContainer $bold={true}>{props.title}</TopContainer>
-              </TopAllTitleContainer>
-              {props.productData.map((item: Data) => {
-                return (
-                  <TopMainContainer key={item.id}>
-                    <TopContainerChild>
-                      <Image
-                        src={item.image || defaultProductImage}
-                        alt={item.name}
-                        width={25}
-                        height={25}
-                      />
-                      <div>
-                        <ProductContainer
-                          style={{ fontWeight: "600", fontSize: "0.875rem" }}
+          <>
+            <TopAllTitleContainer>
+              <TopContainer $bold={true}>{props.title}</TopContainer>
+            </TopAllTitleContainer>
+            {props.productData.map((item: Data) => {
+              return (
+                <TopMainContainer key={item.id}>
+                  <TopContainerChild>
+                    <Image
+                      src={item.image || defaultProductImage}
+                      alt={item.name}
+                      width={25}
+                      height={25}
+                    />
+                    <div>
+                      <ProductContainer
+                        style={{ fontWeight: "600", fontSize: "0.875rem" }}
+                      >
+                        {item.name}
+                      </ProductContainer>
+                      <div style={{ display: "flex", gap: "10px" }}>
+                        <TopContainer
+                          $background="#f4f0ec"
+                          $bold={true}
+                          $padding={true}
                         >
-                          {item.name}
-                        </ProductContainer>
-                        <div>
-                          <TopContainer
-                            $background="#f4f0ec"
-                            $bold={true}
-                            $padding={true}
-                          >
-                            {item.percent + "%"}
-                          </TopContainer>
-                          <TopContainer>{" " + item.type}</TopContainer>
-                        </div>
+                          {item.percent + "%"}
+                        </TopContainer>
+                        <TopContainer>{" " + item.type}</TopContainer>
                       </div>
-                    </TopContainerChild>
+                    </div>
+                  </TopContainerChild>
 
-                    <FlexContainerCard>
-                      <TopContainer $bold={true}>SEK {item.price}</TopContainer>
-                      <TopContainer>CSV{item.cvrPercent}</TopContainer>
-                    </FlexContainerCard>
-                  </TopMainContainer>
-                );
-              })}
-            </>
-          </OneCardComponent>
+                  <FlexContainerCard>
+                    <TopContainer $bold={true}>SEK {item.price}</TopContainer>
+                    <TopContainer>CSV{item.cvrPercent}</TopContainer>
+                  </FlexContainerCard>
+                </TopMainContainer>
+              );
+            })}
+          </>
         </BoxShadowContainer>
       </MainContainer>
     </>
@@ -81,7 +79,7 @@ export async function getServerSideProps(context: any) {
   // console.log("enter");
   // const params = context.params;
 
-  const response = await fetch(`http://localhost:3001/api/topgetproducts`);
+  const response = await fetch(`http://localhost:3000/api/topgetproducts`);
   const data = await response.json();
   console.log(data);
 

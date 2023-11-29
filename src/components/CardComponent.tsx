@@ -15,6 +15,7 @@ import productsvg from "../../public/product1.svg";
 import Image from "next/image";
 import { characterStringCheck } from "@/utility";
 import { Data } from "@/types";
+import useWindowSize from "@/ReactHooks/useWindowSize";
 
 interface PostDataProps {
   data: Data[];
@@ -51,13 +52,14 @@ const isProductData = (data: any): data is ProductDataProps => {
 };
 
 const CardComponent = (props: PropsData) => {
+  const { data } = useWindowSize();
   console.log(props, "Hello Data");
 
   if (props.title === "Top products" && isProductData(props)) {
     return (
       <BoxShadowContainer>
         <OneCardComponent
-          $height="430px"
+          $height={true}
           $overflowY={true}
           $isheightChange={true}
         >
@@ -78,15 +80,15 @@ const CardComponent = (props: PropsData) => {
                       <Image
                         src={item.image}
                         alt="product"
-                        width={40}
-                        height={40}
+                        width={50}
+                        height={50}
                       />
 
-                      <div>
+                      <div style={{ marginTop: "9px" }}>
                         <ProductContainer $bold={true}>
                           {checkString}
                         </ProductContainer>
-                        <div>
+                        <div style={{ marginTop: "6.09px" }}>
                           <ProductContainer
                             $background="#f4f0ec"
                             $bold={true}
@@ -118,7 +120,7 @@ const CardComponent = (props: PropsData) => {
     return (
       <BoxShadowContainer>
         <OneCardComponent
-          $height="430px"
+          $height={true}
           $overflowY={true}
           $isheightChange={true}
         >
@@ -134,7 +136,7 @@ const CardComponent = (props: PropsData) => {
               const checkString = characterStringCheck(item.name);
               return (
                 <>
-                  <TopMainContainer $padding="0.92rem 2rem">
+                  <TopMainContainer $padding="0.98rem 2rem">
                     <TopContainerChild>
                       <Image
                         src={item.image}
@@ -164,7 +166,7 @@ const CardComponent = (props: PropsData) => {
     return (
       <BoxShadowContainer>
         <OneCardComponent
-          $height="430px"
+          $height={true}
           $overflowY={true}
           $isheightChange={true}
         >

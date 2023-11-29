@@ -3,6 +3,8 @@ import Button from "./Button";
 import { buttons } from "../constants/index";
 import { HeadingContainer } from "@/styles/indexStyle";
 import DatePickerComponent from "./DatePickerComponent";
+import useWindowSize from "@/ReactHooks/useWindowSize";
+
 type Props = {
   isApplyStyle: boolean;
 };
@@ -10,6 +12,7 @@ type Props = {
 const MainHeader = (props: Props) => {
   const [selected, setSelected] = useState("");
   const [show, setShow] = useState(false);
+  const { data } = useWindowSize();
 
   const onChangeHandler = (value: string) => {
     if (value == "") console.log(value);
@@ -17,7 +20,10 @@ const MainHeader = (props: Props) => {
   };
 
   return (
-    <HeadingContainer $applyStyle={props.isApplyStyle}>
+    <HeadingContainer
+      $applyStyle={props.isApplyStyle}
+      $applyPadding={data < 425 ? true : false}
+    >
       {buttons.map((buttonDetails: any, index: number) => {
         return (
           <Button

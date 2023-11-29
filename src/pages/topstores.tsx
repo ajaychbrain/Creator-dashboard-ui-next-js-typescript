@@ -22,7 +22,7 @@ const AllTopPosts = (props: Props) => {
   return (
     <>
       <MainContainer>
-        <SearchContainer />
+        <SearchContainer isApplyStyle={false} />
         <BoxShadowContainer>
           <OneCardComponent>
             <>
@@ -67,7 +67,7 @@ export async function getServerSideProps(context: any) {
   // console.log("enter");
   // const params = context.params;
 
-  const response = await fetch(`http://localhost:3001/api/topgetstores`);
+  const response = await fetch(`http://localhost:3000/api/topgetstores`);
   const data = await response.json();
   console.log(data);
 
