@@ -7,12 +7,14 @@ import { CardsComponentContainer } from "@/styles/CardComponentStyles";
 import data from "../../constants/TopProductData.json";
 import postdata from "../../constants/TopPostData.json";
 import storesdata from "../../constants/TopStoresData.json";
+import ProductTitle from "@/components/ProductTitle";
 
 type Props = {};
 
 const Dashboard = (props: Props) => {
   return (
     <MainContainer>
+      <ProductTitle title="My dashboard" display={true} />
       <div className="options of chart">
         <MainHeader isApplyStyle={false} />
       </div>

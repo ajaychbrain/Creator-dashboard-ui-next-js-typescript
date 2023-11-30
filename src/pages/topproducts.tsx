@@ -79,7 +79,7 @@ export async function getServerSideProps(context: any) {
   // console.log("enter");
   // const params = context.params;
 
-  const response = await fetch(`http://localhost:3000/api/topgetproducts`);
+  const response = await fetch(`http://localhost:3001/api/topgetproducts`);
   const data = await response.json();
   console.log(data);
 

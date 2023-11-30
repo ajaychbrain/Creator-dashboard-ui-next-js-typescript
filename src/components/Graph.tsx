@@ -5,6 +5,7 @@ import curvedLine from "../../public/Vector3.svg";
 import Image from "next/image";
 import useWindowSize from "@/ReactHooks/useWindowSize";
 import { Doughnut } from "react-chartjs-2";
+import ChartComponent from "./ChartComponent";
 
 type Props = {};
 
@@ -30,11 +31,12 @@ const Graph = (props: Props) => {
           ""
         )}
 
-        <Image
+        {/* <Image
           src={curvedLine}
           alt="icons"
           style={{ width: "100%", height: "auto" }}
-        />
+        /> */}
+        <ChartComponent />
         <div
           style={{
             color: "black",

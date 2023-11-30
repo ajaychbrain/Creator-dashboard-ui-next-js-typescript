@@ -28,7 +28,7 @@ export const OneCardComponent = styled.div<{
   }
 `;
 
-export const TopAllTitleContainer = styled.div`
+export const TopAllTitleContainer = styled.div<{ $marginBottom?: boolean }>`
   position: sticky;
   position: -webkit-sticky;
   background-color: rgba(255, 255, 255, 1);
@@ -49,7 +49,7 @@ export const TopAllTitleContainer = styled.div`
     letter-spacing: 0em;
   }
   @media only screen and (max-width: 1024px) {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     padding: 12px 15px;
