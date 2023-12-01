@@ -1,15 +1,46 @@
 import { GraphContainer } from "@/styles/GraphStyles";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BoxShadowContainer } from "@/styles/indexStyle";
 import curvedLine from "../../public/Vector3.svg";
 import Image from "next/image";
 import useWindowSize from "@/ReactHooks/useWindowSize";
 import { Doughnut } from "react-chartjs-2";
 import ChartComponent from "./ChartComponent";
+import myGraphData from "../constants/GraphData.json";
 
-type Props = {};
+type Props = {
+  selectedValue: string;
+  selectedDate: any;
+};
 
 const Graph = (props: Props) => {
+  const [graphData, setGraphData] = useState({});
+
+  useEffect(() => {
+    const dataGrapth = myGraphData.grapmaindata.filter((item: any) => {
+      return item.name === props.selectedValue;
+    });
+
+    setGraphData(dataGrapth[0]);
+    console.log(dataGrapth, props.selectedValue, "Props Value There!");
+
+    if (props.selectedDate && props.selectedValue == "") {
+      console.log("Test");
+      const valueData = props.selectedDate.split(" ");
+      console.log(valueData, "split");
+      const startDate = valueData[0] + valueData[1];
+      const endDate = valueData[3] + valueData[4];
+      const date = startDate + " " + endDate;
+
+      const dataGrapth = myGraphData.grapmaindata.filter((item: any) => {
+        return item.name === "1stOct 30thNov";
+      });
+      setGraphData(dataGrapth[0]);
+    }
+  }, [props.selectedValue, props.selectedDate]);
+
+  console.log(graphData, "GraphData");
+
   const { data } = useWindowSize();
 
   return (
@@ -31,12 +62,10 @@ const Graph = (props: Props) => {
           ""
         )}
 
-        {/* <Image
-          src={curvedLine}
-          alt="icons"
-          style={{ width: "100%", height: "auto" }}
-        /> */}
-        <ChartComponent />
+        <ChartComponent
+          selectedValue={graphData}
+          selectedDate={props.selectedDate}
+        />
         <div
           style={{
             color: "black",

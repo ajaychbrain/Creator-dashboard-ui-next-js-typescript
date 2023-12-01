@@ -19,31 +19,43 @@ ChartJS.register(
   Title
 );
 
-type Props = {};
+type Props = {
+  selectedValue: any;
+  selectedDate: any;
+};
 
 const ChartComponent = (props: Props) => {
   {
-    console.log(props, "Ajay");
+    console.log(props, "Ajasssy");
   }
   const data = {
-    labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT"],
+    labels: props.selectedValue.labels,
     datasets: [
       {
         label: "Sales of the Week",
-        data: [1, 2, 3, 4, 5, 7, 8, 9],
+        data: props.selectedValue.data,
         backgroundColor: "aqua",
         borderColor: "black",
         pointBorderColor: "rgb(255, 99, 132)",
         tension: 0.1,
+        pointRadius: 0,
       },
     ],
   };
 
   const options = {
+    scales: {
+      x: {
+        display: false,
+      },
+      y: {
+        display: false,
+      },
+    },
     responsive: true,
     plugins: {
       legend: {
-        position: "top" as const,
+        display: false,
       },
     },
     maintainAspectRatio: false,
@@ -51,7 +63,7 @@ const ChartComponent = (props: Props) => {
   };
 
   return (
-    <div>
+    <div style={{ transition: "none", padding: "1.5rem 0" }}>
       <Line data={data} options={options}></Line>
     </div>
   );

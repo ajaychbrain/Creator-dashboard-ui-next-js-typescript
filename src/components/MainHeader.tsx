@@ -7,6 +7,8 @@ import useWindowSize from "@/ReactHooks/useWindowSize";
 
 type Props = {
   isApplyStyle: boolean;
+  getSelectedValue: (value: string) => void;
+  getSelectedDateValue: (value: any) => void;
 };
 
 const MainHeader = (props: Props) => {
@@ -17,6 +19,17 @@ const MainHeader = (props: Props) => {
   const onChangeHandler = (value: string) => {
     if (value == "") console.log(value);
     setSelected(value);
+  };
+
+  props.getSelectedValue(selected);
+
+  const getSelectedDate = (dateSelected: any) => {
+    console.log(dateSelected);
+    props.getSelectedDateValue(dateSelected);
+  };
+
+  const doesDateChange = () => {
+    setSelected("");
   };
 
   return (
@@ -35,7 +48,11 @@ const MainHeader = (props: Props) => {
           />
         );
       })}
-      <DatePickerComponent selectValueFromtoTo={selected} />
+      <DatePickerComponent
+        selectValueFromtoTo={selected}
+        getSelectedDate={getSelectedDate}
+        doesDateChange={doesDateChange}
+      />
     </HeadingContainer>
   );
 };

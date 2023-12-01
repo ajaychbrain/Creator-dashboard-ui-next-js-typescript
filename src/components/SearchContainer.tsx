@@ -10,7 +10,7 @@ import {
   SearchMainContainer,
 } from "@/styles/indexStyle";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import MainHeader from "./MainHeader";
 import useWindowSize from "@/ReactHooks/useWindowSize";
 
@@ -22,6 +22,19 @@ const SearchContainer = (props: Props) => {
   const router = useRouter();
   console.log(router, "router");
   const { data } = useWindowSize();
+  const [selectedvalue, setSelectedValue] = useState<any>("This Month");
+  const [selectedDate, setSelectedDate] = useState<any>();
+
+  const getSelected = (value: any) => {
+    setSelectedValue(value);
+  };
+
+  const getSelectedDate = (value: any) => {
+    console.log(value);
+
+    setSelectedDate(value);
+    // setFromTo([startDate, endDate]);
+  };
   return (
     <>
       <SearchMainContainer>
@@ -62,7 +75,11 @@ const SearchContainer = (props: Props) => {
               ""
             )}
 
-            <MainHeader isApplyStyle={false} />
+            <MainHeader
+              getSelectedValue={getSelected}
+              getSelectedDateValue={getSelectedDate}
+              isApplyStyle={false}
+            />
           </ScrollContainer>
         </HeadingContainerMain>
       </SearchMainContainer>

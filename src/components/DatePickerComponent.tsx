@@ -6,9 +6,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import { DatePickerContainer } from "@/styles/indexStyle";
 type Props = {
   selectValueFromtoTo: string;
+  getSelectedDate: (value: any) => void;
+  doesDateChange: () => void;
 };
 
-const DatePickerComponent = ({ selectValueFromtoTo }: Props) => {
+const DatePickerComponent = ({
+  selectValueFromtoTo,
+  getSelectedDate,
+}: Props) => {
   var date = new Date();
   var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
   var lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
@@ -21,6 +26,8 @@ const DatePickerComponent = ({ selectValueFromtoTo }: Props) => {
     " - " +
     (endDate ? format(endDate, "do LLL") : +"");
   const [calculatedDate, setCalculatedDate] = useState(calculateValue);
+
+  getSelectedDate(calculatedDate);
 
   useEffect(() => {
     if (selectValueFromtoTo === "Yesterday") {

@@ -24,42 +24,40 @@ const AllTopPosts = (props: Props) => {
       <MainContainer>
         <SearchContainer isApplyStyle={false} />
         <BoxShadowContainer>
-          <OneCardComponent>
-            <>
-              <TopAllTitleContainer>
-                <TopContainer $bold={true}>{props.title}</TopContainer>
-              </TopAllTitleContainer>
-              {props.productData.map((item: Data) => {
-                return (
-                  <TopMainContainer key={item.id}>
-                    <TopContainerChild>
-                      <Image
-                        src={item.image || defaultProductImage}
-                        alt={item.name}
-                        width={25}
-                        height={25}
-                      />
+          <>
+            <TopAllTitleContainer>
+              <TopContainer $bold={true}>{props.title}</TopContainer>
+            </TopAllTitleContainer>
+            {props.productData.map((item: Data) => {
+              return (
+                <TopMainContainer key={item.id}>
+                  <TopContainerChild>
+                    <Image
+                      src={item.image || defaultProductImage}
+                      alt={item.name}
+                      width={25}
+                      height={25}
+                    />
+                    <div>
+                      <TopContainer
+                        style={{ fontWeight: "600", fontSize: "0.875rem" }}
+                      >
+                        {item.name}
+                      </TopContainer>
                       <div>
-                        <TopContainer
-                          style={{ fontWeight: "600", fontSize: "0.875rem" }}
-                        >
-                          {item.name}
-                        </TopContainer>
-                        <div>
-                          <TopContainer></TopContainer>
-                        </div>
+                        <TopContainer></TopContainer>
                       </div>
-                    </TopContainerChild>
+                    </div>
+                  </TopContainerChild>
 
-                    <FlexContainerCard>
-                      <TopContainer $bold={true}>SEK {item.price}</TopContainer>
-                      <TopContainer></TopContainer>
-                    </FlexContainerCard>
-                  </TopMainContainer>
-                );
-              })}
-            </>
-          </OneCardComponent>
+                  <FlexContainerCard>
+                    <TopContainer $bold={true}>SEK {item.price}</TopContainer>
+                    <TopContainer></TopContainer>
+                  </FlexContainerCard>
+                </TopMainContainer>
+              );
+            })}
+          </>
         </BoxShadowContainer>
       </MainContainer>
     </>
